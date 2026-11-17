@@ -25,7 +25,7 @@ COLORS = {"positive": "green", "negative": "red", "neutral": "gray"}
 def load_model():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     tokenizer = AutoTokenizer.from_pretrained(BASE)
-    model = AutoModelForCausalLM.from_pretrained(BASE, dtype=torch.float32)
+    model = AutoModelForCausalLM.from_pretrained(BASE, dtype=torch.bfloat16)
     model = PeftModel.from_pretrained(model, ADAPTER).merge_and_unload()
     model.to(device).eval()
     return tokenizer, model
