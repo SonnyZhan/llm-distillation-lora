@@ -1,0 +1,29 @@
+# Virtual environments (rebuilt from requirements.txt)
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter / Colab leftovers
+.ipynb_checkpoints/
+
+# Secrets and API keys
+.env
+*.env
+.streamlit/secrets.toml
+
+# Training leftovers and archives (only lora_analysis/ is needed to run the app)
+out_labels/
+out_analysis/
+lora_training_output*/
+checkpoint-*/
+*.zip
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
